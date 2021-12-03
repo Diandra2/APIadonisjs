@@ -22,7 +22,7 @@ export default class ReceitasController {
     const data = await request.validate(StoreReceitaValidator)
     try {
       const receitasDB = await Receita.findOrFail(params.id)
-      receitasDB.receita = data.receitas
+      receitasDB.receita = data.receita
       await receitasDB.save()
       return receitasDB
 
